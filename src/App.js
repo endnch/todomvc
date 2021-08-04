@@ -12,7 +12,7 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <AppProvider uri={process.env.REACT_APP_8BASE_API_URL}>
+      <AppProvider uri={process.env.REACT_APP_WORKSPACE_ENDPOINT}>
         {({ loading }) =>
           loading ? (
             <div>"Loading..."</div>
