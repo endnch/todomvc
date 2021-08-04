@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": false,
   "dependencies": {
-    "@8base/app-provider": "0.15.0",
+    "@8base/app-provider": "^0.37.2",
     "apollo-client": "2.5.1",
     "graphql": "14.1.1",
     "graphql-tag": "2.10.1",
@@ -11,7 +11,7 @@
     "react": "16.8.3",
     "react-apollo": "2.5.1",
     "react-dom": "16.8.3",
-    "react-router-dom": "4.2.2",  
+    "react-router-dom": "^5.2.0",
     "todomvc-app-css": "2.1.0"
   },
   "scripts": {
@@ -21,6 +21,13 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "prettier": "2.3.2",
     "react-scripts": "latest"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
