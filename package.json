@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": false,
   "dependencies": {
+    "@8base/api-client": "^1.4.5",
     "@8base/app-provider": "^0.37.2",
+    "@8base/auth": "^1.4.5",
+    "@8base/react-sdk": "^0.37.2",
     "apollo-client": "2.5.1",
     "graphql": "14.1.1",
     "graphql-tag": "2.10.1",
