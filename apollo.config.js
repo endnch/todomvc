@@ -1,11 +1,9 @@
 module.exports = {
   client: {
     service: {
-      name: '8base',
-      url: 'https://api.8base.com/cjsrk2gxq000d01s06ye4s4vz',
+      name: "8base",
+      url: process.env.REACT_APP_8BASE_API_URL,
     },
-    includes: [
-      "src/*.{ts,tsx,js,jsx}"
-    ]
+    includes: ["src/*.{ts,tsx,js,jsx}"],
   },
 };
