@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { AppProvider } from "@8base/app-provider";
 
 import Header from "./components/Header";
