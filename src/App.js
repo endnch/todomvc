@@ -9,6 +9,9 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer.js";
 import AuthButton from "./components/AuthButton";
+import ProtectedRoute from "./shared/components/ProtectedRoute";
+import Profile from "./components/Profile";
+import ProfileLink from "./components/ProfileLink";
 
 import "todomvc-app-css/index.css";
 import "./App.css";
@@ -30,8 +33,10 @@ function App() {
         uri={process.env.REACT_APP_WORKSPACE_ENDPOINT}
         authClient={AuthClient}
       >
+        <ProfileLink />
         <AuthButton />
         <Switch>
+          <ProtectedRoute exact path="/profile" component={Profile} />
           <Route path="/auth" component={AuthCallback} />
           <Route path="/" component={Home} />
         </Switch>

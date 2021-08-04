@@ -1,7 +1,5 @@
 button {
-  position: absolute;
-  right: 0px;
-  text-decoration: underline;
-  top: 0px;
   cursor: pointer;
+  float: right;
+  text-decoration: underline;
 }
