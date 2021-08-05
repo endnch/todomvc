@@ -47,8 +47,6 @@ export default async (event, ctx) => {
   });
 
   return {
-    data: {
-      result: true
-    },
+    data: response.todoUpdate,
   };
 };

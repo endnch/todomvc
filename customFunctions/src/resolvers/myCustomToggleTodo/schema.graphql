@@ -6,10 +6,6 @@
 # https://docs.8base.com/8base-console/custom-functions/resolvers
 #
 
-type MyCustomToggleTodoResult {
-  result: Boolean!
-}
-
 extend type Mutation {
-  myCustomToggleTodo(id: ID!, completed: Boolean!): MyCustomToggleTodoResult
+  myCustomToggleTodo(id: ID!, completed: Boolean!): Todo!
 }
