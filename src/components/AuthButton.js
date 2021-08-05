@@ -17,6 +17,7 @@ class AuthButton extends React.Component {
 
     const Logout = () => (
       <button
+        className="auth-button"
         onClick={async () => {
           await client.clearStore();
           auth.authClient.logout();
@@ -27,7 +28,12 @@ class AuthButton extends React.Component {
     );
 
     const Login = () => (
-      <button onClick={() => auth.authClient.authorize()}>Sign In</button>
+      <button
+        className="auth-button"
+        onClick={() => auth.authClient.authorize()}
+      >
+        Sign In
+      </button>
     );
 
     return <>{auth.isAuthorized ? <Logout /> : <Login />}</>;
