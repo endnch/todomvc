@@ -35,12 +35,13 @@ const renderComponent = (props) => {
  * If the user isAuthorized, it will render the next component. Otherwise,
  * it will redirect to the '/auth' route, requiring that the user login.
  */
-class ProtectedRoute extends React.Component {
-  renderRoute = () => {
+
+function ProtectedRoute(props) {
+  function renderRoute() {
     const {
       auth: { isAuthorized },
       ...restProps
-    } = this.props;
+    } = props;
 
     if (isAuthorized) {
       return renderComponent(restProps);
@@ -54,13 +55,10 @@ class ProtectedRoute extends React.Component {
         to={{ pathname: "/auth", state: { from: restProps.location } }}
       />
     );
-  };
-
-  render() {
-    const { component, render, ...rProps } = this.props;
-
-    return <Route {...rProps} render={this.renderRoute} />;
   }
+
+  const { component, render, ...rProps } = props;
+  return <Route {...rProps} render={renderRoute} />;
 }
 
 export default withAuth(ProtectedRoute);

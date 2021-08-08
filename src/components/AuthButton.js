@@ -7,10 +7,8 @@ import { CURRENT_USER_QUERY } from "../shared/graphql";
 
 import "./AuthButton.css";
 
-class AuthButton extends React.Component {
-  renderContent = ({ loading }) => {
-    const { auth, client } = this.props;
-
+function AuthButton({ auth, client }) {
+  function renderContent({ loading }) {
     if (loading) {
       return null;
     }
@@ -37,11 +35,9 @@ class AuthButton extends React.Component {
     );
 
     return <>{auth.isAuthorized ? <Logout /> : <Login />}</>;
-  };
-
-  render() {
-    return <Query query={CURRENT_USER_QUERY}>{this.renderContent}</Query>;
   }
+
+  return <Query query={CURRENT_USER_QUERY}>{renderContent}</Query>;
 }
 
 export default compose(withApollo, withAuth)(AuthButton);
