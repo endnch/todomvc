@@ -39,11 +39,12 @@ function CallbackContainer({ auth, history }) {
       /* Redirect user to root path */
       history.replace("/");
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return <h2>Loading...</h2>;
 }
 
-CallbackContainer = withAuth(CallbackContainer);
+const CallbackContainerWithAuth = withAuth(CallbackContainer);
 
-export { CallbackContainer };
+export { CallbackContainerWithAuth as CallbackContainer };

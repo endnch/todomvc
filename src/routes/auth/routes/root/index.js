@@ -6,11 +6,12 @@ function AuthContainer({ auth }) {
     (async function () {
       await auth.authClient.authorize();
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return <h2>Loading...</h2>;
 }
 
-AuthContainer = withAuth(AuthContainer);
+const AuthContainerWithAuth = withAuth(AuthContainer);
 
-export { AuthContainer };
+export { AuthContainerWithAuth as AuthContainer };
