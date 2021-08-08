@@ -29,6 +29,11 @@
  */
 
 import gql from "graphql-tag";
+import {
+  FunctionContext,
+  FunctionEvent,
+  FunctionResult,
+} from "8base-cli-types";
 
 const TOGGLE_TODO_MUTATION = gql`
   mutation TodoToggle($id: ID!, $completed: Boolean!) {
@@ -40,11 +45,23 @@ const TOGGLE_TODO_MUTATION = gql`
   }
 `;
 
-export default async (event, ctx) => {
-  const response = await ctx.api.gqlRequest(TOGGLE_TODO_MUTATION, {
-    id: event.data.id,
-    completed: event.data.completed,
-  });
+type Todo = {
+  id: string;
+  text: string;
+  completed: boolean;
+};
+
+export default async (
+  event: FunctionEvent<{ id: string; completed: boolean }>,
+  ctx: FunctionContext
+): FunctionResult<Todo> => {
+  const response: { todoUpdate: Todo } = await ctx.api.gqlRequest(
+    TOGGLE_TODO_MUTATION,
+    {
+      id: event.data.id,
+      completed: event.data.completed,
+    }
+  );
 
   return {
     data: response.todoUpdate,
